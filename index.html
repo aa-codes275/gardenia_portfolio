@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gardenia A | تنظيم وإدارة الفعاليات الفاخرة</title>
+  <meta name="description" content="جاردينيا A — حلول متكاملة لتنظيم الحفلات والمؤتمرات والمناسبات من الفكرة إلى التنفيذ." />
+
+  <!-- 🟢 الأكواد المسؤولة عن ظهور الصورة والمعلومات عند مشاركة اللينك -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gardenia A | تنظيم وإدارة الفعاليات الفاخرة" />
+  <meta property="og:description" content="جاردينيا A — حلول متكاملة لتنظيم الحفلات والمؤتمرات والمناسبات من الفكرة إلى التنفيذ." />
+  
+  <!-- ⚠️ هنا بتحط اسم ملف الصورة الفعلي (مثلاً logo-gard45665enia_4.jpg) -->
+  <meta property="og:image" content="01bfade3-ed92-4110-b10e-b54d707d5cfa.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- أيقونة التبويب الصغيرة (Favicon) اللي بتظهر فوق في المتصفح -->
+  <link rel="icon" type="image/jpeg" href="01bfade3-ed92-4110-b10e-b54d707d5cfa.jpg" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+<style>
+/* ===== تعديلات توسيط قسم الـ Hero واللوجو ===== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-logo-frame { 
+  position: relative; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 2.25rem; 
+}
+
+.hero-logo-frame::before,
+.hero-logo-frame::after {
+  content: "";
+  position: absolute;
+  width: 42px; 
+  height: 42px;
+  border: 2px solid var(--gold);
+  pointer-events: none;
+}
+.hero-logo-frame::before { top: -18px; left: -18px; border-right: 0; border-bottom: 0; }
+.hero-logo-frame::after  { bottom: -18px; right: -18px; border-left: 0; border-top: 0; }
+
+.hero-content .hero-logo {
+  display: block;
+  width: min(22rem, 78vw);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: 14px;
+  padding: 0;
+  mix-blend-mode: normal !important;
+  animation: none;
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(212,175,55,0.55),
+    0 0 0 10px rgba(11,31,24,0.9),
+    0 0 0 11px rgba(212,175,55,0.9),
+    0 30px 80px -20px rgba(0,0,0,0.75),
+    0 0 60px rgba(212,175,55,0.25);
+  transition: transform .5s ease, box-shadow .5s ease;
+}
+
+.hero-content .hero-logo:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 0 0 1px rgba(212,175,55,0.8),
+    0 0 0 10px rgba(11,31,24,0.95),
+    0 0 0 11px rgba(230,200,117,1),
+    0 40px 100px -20px rgba(0,0,0,0.8),
+    0 0 90px rgba(212,175,55,0.4);
+}
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#home" class="nav-logo">
+        <img src="01bfade3-ed92-4110-b10e-b54d707555555555d5cfa.jpg" alt="شعار جاردينيا A" />
+        <span class="font-display" style="color: white; -webkit-text-fill-color: white;">GARDENIA A</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#portfolio">أعمالنا</a></li>
+        <li><a href="#contact">تواصل</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">احجز الآن</a>
+      <button class="menu-btn" id="menuBtn" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">الرئيسية</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#portfolio">أعمالنا</a>
+      <a href="#contact">تواصل</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero bg-gradient-hero">
+    <div class="hero-bg">
+      <img src="hero-stage.jpg" alt="مسرح فعاليات جاردينيا" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+      <div class="beam" style="left:10%;animation-delay:0s"></div>
+      <div class="beam green" style="left:22%;animation-delay:0.6s"></div>
+      <div class="beam" style="left:34%;animation-delay:1.2s"></div>
+      <div class="beam green" style="left:46%;animation-delay:0.3s"></div>
+      <div class="beam" style="left:58%;animation-delay:1.5s"></div>
+      <div class="beam green" style="left:70%;animation-delay:0.9s"></div>
+      <div class="beam" style="left:82%;animation-delay:0.4s"></div>
+      <div class="beam green" style="left:92%;animation-delay:1.1s"></div>
+    </div>
+
+    <div class="pointer-events-none absolute inset-0 overflow-hidden" id="particles"></div>
+
+    <div class="hero-content reveal">
+      <div class="hero-logo-frame"><img src="01bfade3-ed92-4110-b10e-b54d707d5cfa.jpg" alt="شعار جاردينيا A" class="hero-logo" /></div>
+      <p class="hero-subtitle"><i class="fas fa-star"></i> GARDENIA A <i class="fas fa-star"></i></p>
+      <h1 class="hero-title shimmer-text">نستقبل حجوزاتكم الآن</h1>
+      <p class="hero-desc">لجعل مناسباتكم تجربة لا تُنسى</p>
+      <p class="hero-body">من الفكرة إلى التنفيذ، نحوّل رؤيتكم إلى حدث استثنائي يحظى بكل التفاصيل.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary"><i class="fas fa-calendar"></i> احجز موعدك الآن</a>
+        <a href="#portfolio" class="btn-outline">استعرض أعمالنا</a>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="section-header reveal">
+      <p class="section-label">خدماتنا</p>
+      <h2 class="section-title"><span class="text-gradient-gold"> خدماتنا الاستثنائية</span> لنجاح كل مناسبة</h2>
+      <p class="section-desc">خبرة متراكمة وفريق عمل محترف يحوّل كل فعالية إلى تجربة استثنائية لا تُنسى.</p>
+    </div>
+    <div class="grid-4">
+      <div class="service-card reveal">
+        <div class="service-glow"></div>
+        <div class="service-icon"><i class="fas fa-sliders"></i></div>
+        <h3>حلول متكاملة من البداية للنهاية</h3>
+        <p>تخطيط شامل من الفكرة الأولى حتى آخر تفصيلة في التنفيذ، مع إدارة لكل الموارد والوقت.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-glow"></div>
+        <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+        <h3>التسويق والترويج</h3>
+        <p>حملات إعلانية رقمية وميدانية احترافية تضمن وصول فعاليتكم لأكبر شريحة من الجمهور المستهدف.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-glow"></div>
+        <div class="service-icon"><i class="fas fa-users"></i></div>
+        <h3>إدارة الحشود والتشغيل</h3>
+        <p>تنظيم محكم للحضور والأمن والحركة داخل القاعة، مع فريق تشغيل ميداني مدرّب على أعلى مستوى.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-glow"></div>
+        <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+        <h3>إدارة وتنظيم الفعاليات</h3>
+        <p>إشراف كامل على الإضاءة والصوت والمسرح والجدول الزمني لضمان تجربة لا تشوبها شائبة.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="section">
+    <div class="section-header reveal">
+      <p class="section-label">معرض الأعمال</p>
+      <h2 class="section-title"><span class="text-gradient-gold">لحظات</span> صنعنا تفاصيلها</h2>
+      <p class="section-desc">مختارات من مشاريعنا التي حوّلت كل فعالية إلى ذكرى خالدة.</p>
+    </div>
+
+    <div class="filters reveal">
+      <button class="filter-btn active" data-filter="all">الكل</button>
+      <button class="filter-btn" data-filter="weddings">حفلات وأفراح</button>
+      <button class="filter-btn" data-filter="conferences">مؤتمرات</button>
+      <button class="filter-btn" data-filter="concerts">حفلات فنية</button>
+      <button class="filter-btn" data-filter="exhibitions">معارض وإطلاقات</button>
+    </div>
+
+    <div class="grid-3" id="portfolioGrid">
+      <!-- Items rendered by JS -->
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose"><i class="fas fa-xmark"></i></button>
+      <div id="lightboxMediaWrap"></div>
+      <div class="lightbox-details">
+        <h3 class="text-gradient-gold" id="lightboxTitle"></h3>
+        <p id="lightboxDesc"></p>
+        <p class="text-gold" style="font-size:0.875rem;margin-top:0.75rem;" id="lightboxHint"></p>
+      </div>
+    </div>
+  </div>
+
+  <section id="contact" class="section">
+    <div class="section-header reveal">
+      <p class="section-label">تواصل معنا</p>
+      <h2 class="section-title"><span class="text-gradient-gold">احجز موعدك</span> الآن</h2>
+      <p class="section-desc">نحول أحلامكم إلى واقع لا يُنسى — من الفكرة إلى آخر تفصيلة، نحن معكم في كل خطوة.</p>
+    </div>
+
+    <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; direction: rtl;">
+      
+      <a href="javascript:void(0);" id="whatsappCardBtn" class="contact-card reveal" style="text-decoration: none; display: block; box-sizing: border-box;">
+        <div class="contact-glow left"></div>
+        <div class="contact-inner">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <p class="contact-label">واتساب</p>
+            <h3 class="contact-value" dir="ltr">0573866384</h3>
+            <p class="contact-hint">رد فوري على مدار 24 الساعة</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="mailto:gardeniaaa44@gmail.com" class="contact-card reveal" style="text-decoration: none; display: block; box-sizing: border-box;">
+        <div class="contact-glow left"></div>
+        <div class="contact-inner">
+          <div class="contact-icon"><i class="far fa-envelope"></i></div>
+          <div>
+            <p class="contact-label">البريد الإلكتروني</p>
+            <h3 class="contact-value" style="font-size: 1.1rem; word-break: break-all;" dir="ltr">gardeniaaa44@gmail.com</h3>
+            <p class="contact-hint">تواصل معنا رسميًا في أي وقت</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div id="whatsappModal" style="display: none; position: fixed; inset: 0; background: rgba(5, 25, 17, 0.85); backdrop-filter: blur(8px); justify-content: center; align-items: center; z-index: 9999; padding: 20px;">
+    <div style="background: #0c291d; border: 1px solid #cda152; padding: 30px 20px 20px 20px; border-radius: 16px; max-width: 420px; width: 100%; color: #fff; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.6);" dir="rtl">
+      
+      <button id="closeWhatsappModal" type="button" style="position: absolute; left: 15px; top: 12px; background: none; border: none; color: #cda152; font-size: 2rem; cursor: pointer; line-height: 1;">&times;</button>
+      
+      <h3 style="color: #cda152; margin-bottom: 20px; font-size: 1.4rem; font-weight: bold; text-align: center; font-family: inherit;">تفاصيل الحجز واستفسارك</h3>
+      
+      <form id="whatsappForm" style="display: flex; flex-direction: column; gap: 15px;">
+        <div style="display: flex; flex-direction: column; gap: 5px; text-align: right;">
+          <label style="color: #ffebcd; font-size: 0.9rem;">الاسم الكريم:</label>
+          <input type="text" id="waName" required style="padding: 10px; border-radius: 8px; border: 1px solid rgba(212,175,55,0.3); background: #051911; color: #fff; font-family: inherit; font-size: 1rem; width: 100%; box-sizing: border-box;" placeholder="اكتب اسمك هنا">
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 5px; text-align: right;">
+          <label style="color: #ffebcd; font-size: 0.9rem;">رقم التواصل:</label>
+          <input type="tel" id="waPhone" required style="padding: 10px; border-radius: 8px; border: 1px solid rgba(212,175,55,0.3); background: #051911; color: #fff; font-family: inherit; font-size: 1rem; width: 100%; box-sizing: border-box; text-align: right;" placeholder="اكتب رقم جوالك">
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 5px; text-align: right;">
+          <label style="color: #ffebcd; font-size: 0.9rem;">تفاصيل المناسبة / الحجز:</label>
+          <textarea id="waDetails" required rows="4" style="padding: 10px; border-radius: 8px; border: 1px solid rgba(212,175,55,0.3); background: #051911; color: #fff; font-family: inherit; font-size: 1rem; width: 100%; box-sizing: border-box; resize: none;" placeholder="اكتب نوع المناسبة، التاريخ، وأي تفاصيل تبيها..."></textarea>
+        </div>
+        
+        <button type="submit" style="background: linear-gradient(135deg, #cda152, #ffebcd); color: #051911; padding: 12px; border: none; border-radius: 8px; font-weight: bold; font-size: 1rem; cursor: pointer; margin-top: 10px; font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;">
+          إرسال عبر الواتساب <i class="fab fa-whatsapp"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="socials reveal">
+    <p class="section-label">تابعنا على</p>
+    <div class="social-icons">
+      <a href="https://snapchat.com/t/ASOkxZcD" target="_blank" rel="noreferrer" aria-label="Snapchat">
+        <i class="fab fa-snapchat"></i>
+      </a>
+      
+      <a href="https://www.tiktok.com/@ksa4_4_?_r=1&_t=ZS-97K25Zbs3Qz" target="_blank" rel="noreferrer" aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      
+      <a href="tel:0573866384" aria-label="اتصل بنا">
+        <i class="fas fa-phone"></i>
+      </a> 
+      
+      <a href="https://aa-codes275.github.io/gardenia_portfolio/qrcode.html" target="_blank" rel="noreferrer" aria-label="QR Code" class="qr-icon-wrapper">
+        <i class="fas fa-qrcode" style="font-size: 25px;"></i>
+      </a>
+
+      <a href="https://aa-codes275.github.io/AMIRA/" target="_blank" rel="noreferrer" aria-label="AMIRA">
+        <img src="5841183152544616637_121.jpg" alt="AMIRA" style="width: 50px; height: 50px; vertical-align: middle; border-radius: 50%; object-fit: cover;">
+      </a>
+    </div>
+    <div class="location">
+      <i class="fas fa-location-dot text-gold"></i>
+      <span>المملكة العربية السعودية</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Gardenia A — جميع الحقوق محفوظة</p>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/966573866384" target="_blank" rel="noreferrer" class="whatsapp-float" aria-label="تواصل عبر واتساب">
+    <span class="whatsapp-ping"></span>
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
