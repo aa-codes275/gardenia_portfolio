@@ -4,9 +4,9 @@ const PHONE_LOCAL = "0573866384";
 const EMAIL = "gardeniaaa44@gmail.com";
 const WA_LINK = "https://wa.me/" + PHONE_INTL;
 const SOCIAL = {
-  instagram: "https://www.instagram.com/gardenia44a?igsi=MWFlOGg5YmExY2QwdA==",
+  instagram: "https://instagram.com/gardenia.a_events",
   tiktok: "https://tiktok.com/@gardenia.a_events",
-  snapchat: "https://www.snapchat.com/t/ASOkxZcD"
+  snapchat: "https://snapchat.com/add/gardenia.a"
 };
 
 /* ---------- الشعار محفور كـ SVG (ليس صورة) ---------- */
@@ -69,24 +69,34 @@ function buildChrome(active) {
     b && b.addEventListener("click", () =>
       document.getElementById("mobileMenu").classList.toggle("open"));
   }
-
-  const f = document.querySelector("[data-footer]");
+const f = document.querySelector("[data-footer]");
   if (f) {
     f.innerHTML = `
       <div class="container">
         <div class="mark">${LOGO_SVG}</div>
         <p style="margin:0 0 .5rem">GARDENIA A — الرياض، السعودية</p>
         <p style="margin:0 0 .9rem"><a href="${WA_LINK}" class="gold" dir="ltr">${PHONE_LOCAL}</a> · <a href="mailto:${EMAIL}" class="gold">${EMAIL}</a></p>
-        <div class="social">
-          <a href="${SOCIAL.instagram}" target="_blank" aria-label="إنستجرام"><i class="fa-brands fa-instagram"></i></a>
-          <a href="${SOCIAL.tiktok}" target="_blank" aria-label="تيك توك"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="${SOCIAL.snapchat}" target="_blank" aria-label="سناب شات"><i class="fa-brands fa-snapchat"></i></a>
-          <a href="${WA_LINK}" target="_blank" aria-label="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="social" style="display:flex; justify-content:center; gap:12px; margin-top:12px;">
+          <!-- إنستجرام -->
+          <a href="${SOCIAL.instagram}" target="_blank" aria-label="إنستجرام" onmouseover="this.style.color='#d4af37'; this.style.borderColor='#d4af37';" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.3)';" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.3); color:#ffffff; text-decoration:none; transition:0.3s;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <!-- تيك توك -->
+          <a href="${SOCIAL.tiktok}" target="_blank" aria-label="تيك توك" onmouseover="this.style.color='#d4af37'; this.style.borderColor='#d4af37';" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.3)';" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.3); color:#ffffff; text-decoration:none; transition:0.3s;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+          <!-- سناب شات -->
+          <a href="${SOCIAL.snapchat}" target="_blank" aria-label="سناب شات" onmouseover="this.style.color='#d4af37'; this.style.borderColor='#d4af37';" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.3)';" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.3); color:#ffffff; text-decoration:none; transition:0.3s;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2.8 0 5 2.2 5 5v1.5c0 .8.4 1.5 1 2 .6.5 1.5.8 2.2 1.3 1 .7 1.8 1.8 1.8 3.2 0 1-.3 2-1 2.8-.7.7-1.5 1.2-2.5 1.5-.5.2-1 .5-1.5 1-.4.4-.8 1-.8 1.7 0 .5-.4.9-.9.9h-4.2c-.5 0-.9-.4-.9-.9 0-.7-.4-1.3-.8-1.7-.5-.5-1-.8-1.5-1-1-.3-1.8-.8-2.5-1.5-.7-.8-1-1.8-1-2.8 0-1.4.8-2.5 1.8-3.2.7-.5 1.6-.8 2.2-1.3.6-.5 1-1.2 1-2V7c0-2.8 2.2-5 5-5z"/></svg>
+          </a>
+          <!-- واتساب -->
+          <a href="${WA_LINK}" target="_blank" aria-label="واتساب" onmouseover="this.style.color='#d4af37'; this.style.borderColor='#d4af37';" onmouseout="this.style.color='#ffffff'; this.style.borderColor='rgba(255,255,255,0.3)';" style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.3); color:#ffffff; text-decoration:none; transition:0.3s;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
         </div>
         <p style="margin-top:1.2rem;font-size:.8rem">© ${new Date().getFullYear()} Gardenia A. جميع الحقوق محفوظة.</p>
       </div>`;
   }
-
   document.querySelectorAll("[data-logo]").forEach(el => (el.innerHTML = LOGO_SVG));
   document.querySelectorAll("[data-wa]").forEach(el => el.setAttribute("href", WA_LINK));
   document.querySelectorAll("[data-mail]").forEach(el => el.setAttribute("href", "mailto:" + EMAIL));
@@ -100,9 +110,9 @@ function buildChrome(active) {
 const WORKS = [
   { t: "هوية وتصميم إعلاني", c: "design", type: "image", src: "assets/promo-1.jpg", d: "تصميم إعلان متكامل لجاردينيا A" },
   { t: "تغطية وتنظيم فعالية", c: "events", type: "image", src: "assets/promo-2.jpg", d: "تنسيق مسرح وقاعة وتغطية كاملة" },
-  { t: "فيديو من كواليس التنفيذ", c: "video", type: "video", src: "assets/video-1.mp4", d: "أضف الفيديو باسم assets/video-1.mp4" },
-  { t: "فيديو تغطية حفل", c: "video", type: "video", src: "assets/video-2.mp4", d: "أضف الفيديو باسم assets/video-2.mp4" }
-];
+  { t: "فيديو من كواليس التنفيذ", c: "video", type: "video", src: "E:/gardenia_portfolio/assets/video-2.mp4", d: "أضف الفيديو باسم assets/video-1.mp4" },
+// جرب تغيير المسار مؤقتاً لهذا الشكل (مع تغيير حرف القرص إذا لزم الأمر):
+{ t: "فيديو من كواليس ", c: "video", type: "video", src: "E:/gardenia_portfolio/assets/video-1.mp4", d: "Gardenia A" }];
 
 function renderWorks(filter = "all") {
   const grid = document.getElementById("worksGrid");
