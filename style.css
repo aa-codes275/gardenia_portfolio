@@ -6,9 +6,9 @@
   --bg-rich:#0E2C21;
   --fg:#FFFFFF;
   --muted:#CFE0D6;
-  --gold:#FFFFFF;
-  --gold-soft:#FFFFFF;
-  --line:rgba(255,255,255,.28);
+  --gold:#D9BE7A;
+  --gold-soft:#F0DDAE;
+  --line:rgba(217,190,122,.28);
   --card:#0F2E23;
   --radius:18px;
 }
