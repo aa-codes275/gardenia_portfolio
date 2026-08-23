@@ -12,6 +12,9 @@
   --card:#0F2E23;
   --radius:18px;
 }
+.hero h1 {
+  color: #FFFFFF !important;
+}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
