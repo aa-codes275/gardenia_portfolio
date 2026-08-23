@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>معرض الأعمال | Gardenia A</title>
+<meta name="description" content="صور وفيديوهات من أعمال جاردينيا A في تنظيم وتغطية الفعاليات."/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body data-page="gallery.html">
+<header class="nav" data-nav></header>
+
+<section class="block">
+  <div class="container">
+    <div class="head reveal">
+      <span class="label">معرض الأعمال</span>
+      <h2>لحظات <span class="gold">صنعنا تفاصيلها</span></h2>
+      <p>مختارات من الصور والفيديوهات الخاصة بجاردينيا A. اضغط على أي عمل لعرضه بحجم كامل.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">الكل</button>
+      <button class="filter-btn" data-filter="design">تصميم وإعلان</button>
+      <button class="filter-btn" data-filter="events">فعاليات</button>
+      <button class="filter-btn" data-filter="video">فيديوهات</button>
+    </div>
+
+    <div class="grid g3" id="worksGrid"></div>
+
+    <div class="video-slot reveal" style="margin-top:1.6rem">
+      <b class="gold">مكان إضافة الفيديوهات</b>
+      <p style="margin:.4rem 0 0">ضع ملفات الفيديو في مجلد <span dir="ltr">assets/</span> بأسماء <span dir="ltr">video-1.mp4</span> و <span dir="ltr">video-2.mp4</span> وستظهر تلقائياً في المعرض.</p>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose">×</button>
+  <div class="lb-box">
+    <div id="lbMedia"></div>
+    <div class="lb-txt"><h3 class="gold" id="lbTitle" style="margin:0"></h3><p class="muted" id="lbDesc" style="margin:.3rem 0 0"></p></div>
+  </div>
+</div>
+
+<a class="fab" data-wa target="_blank" aria-label="واتساب">✆</a>
+<footer data-footer></footer>
+<script src="script.js"></script>
+</body>
+</html>
