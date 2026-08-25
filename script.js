@@ -102,7 +102,7 @@ const WORKS = [
   { t: "جاردينيا · مرحلة المونتاج", sub: "تصميم 9", c: "design", type: "image", src: "assets/img-4.jpg", poster: "assets/img-4.jpg" },
   { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/img-5.jpg", poster: "assets/img-5.jpg" },
   { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/promo-1.jpg", poster: "assets/promo-1.jpg" },
-    { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/5796193438838493392_121.jpg", poster: "assets/5796193438838493392_121.jpg" }
+    { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/5780757485290459673_121.jpg", poster: "assets/5780757485290459557_120.jpg" }
 
 ];
 
