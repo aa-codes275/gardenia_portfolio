@@ -89,19 +89,11 @@ function buildChrome(active) {
 
 /* ---------- معرض الأعمال — مشغّل وسائط بقائمة تشغيل ---------- */
 const WORKS = [ 
-    { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 1", c: "video", type: "video", src: "assets/IMG_2520.MP4", poster: "assets/5796193438838493395_121.jpg" },
+    { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 1", c: "video", type: "video", src: "IMG_2520.MP4", poster: "assets/5796193438838493395_121.jpg" },
    { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 2", c: "video", type: "video", src: "assets/video-1.mp4", poster: "assets/5796193438838493364_121.jpg" },
-  { t: "جاردينيا · تنفيذ المشاريع", sub: "مقطع 3", c: "video", type: "video", src: "assets/video-2.mp4", poster: "assets/video-2-poster.jpg" },
-  { t: "جاردينيا · كواليس التنظيم", sub: "مقطع 4", c: "video", type: "video", src: "assets/video-4.mp4", poster: "assets/video-4-poster.jpg" },
-  { t: "جاردينيا · لقطات من الميدان", sub: "مقطع 5", c: "video", type: "video", src: "assets/5796193438378500971.mp4", poster: "assets/video-1-poster.jpg" },
-  { t: "جاردينيا . كواليس التنظيم", sub: "مقطع 6", c: "video", type: "video", src: "assets/5796193438378500974.mp4", poster: "assets/5796193438838493364_121.jpg" },
-  { t: "جاردينيا · لقطات من الميدان", sub: "مقطع 7", c: "video", type: "video", src: "assets/5796193438378500972.mp4", poster: "assets/video-1-poster.jpg" },
-    { t: "جاردينيا · لقطات من الميدان", sub: "مقطع 8", c: "video", type: "video", src: "assets/video-2.mp4", poster: "assets/video-3-poster.jpg" },
-  { t: "جاردينيا · لقطات من الميدان", sub: "مقطع 9", c: "video", type: "video", src: "assets/5796193438378500973.mp4", poster: "assets/video-1-poster.jpg" },
+  { t: "جاردينيا . كواليس التنظيم", sub: "مقطع 4", c: "video", type: "video", src: "assets/5796193438378500974.mp4", poster: "assets/5796193438838493364_121.jpg" },
 
-  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 1", c: "design", type: "image", src: "assets/5796193438838493361_121.jpg", poster: "assets/5796193438838493361_121.jpg" },
   { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 2", c: "design", type: "image", src: "assets/5796193438838493362_121.jpg", poster: "assets/5796193438838493362_121.jpg" },
-  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 3", c: "design", type: "image", src: "assets/5796193438838493365_121.jpg", poster: "assets/5796193438838493365_121.jpg" },
   { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 4", c: "design", type: "image", src: "assets/5796193438838493366_121.jpg", poster: "assets/5796193438838493366_121.jpg" },
   { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 5", c: "design", type: "image", src: "assets/5796193438838493367_121.jpg", poster: "assets/5796193438838493367_121.jpg" },
   { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 6", c: "design", type: "image", src: "assets/5796193438838493368_121.jpg", poster: "assets/5796193438838493368_121.jpg" },
@@ -110,8 +102,7 @@ const WORKS = [
   { t: "جاردينيا · مرحلة المونتاج", sub: "تصميم 9", c: "design", type: "image", src: "assets/img-4.jpg", poster: "assets/img-4.jpg" },
   { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/img-5.jpg", poster: "assets/img-5.jpg" },
   { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/promo-1.jpg", poster: "assets/promo-1.jpg" },
-    { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/5796193438838493392_121.jpg", poster: "assets/5796193438838493392_121.jpg" },
-  { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/5780757485290459673_121.jpg", poster: "assets/5780757485290459673_121.jpg" }
+    { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/5796193438838493392_121.jpg", poster: "assets/5796193438838493392_121.jpg" }
 
 ];
 
