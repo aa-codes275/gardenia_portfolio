@@ -88,9 +88,10 @@ function buildChrome(active) {
 }
 
 /* ---------- معرض الأعمال — مشغّل وسائط بقائمة تشغيل ---------- */
-const WORKS = [ 
-    { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 1", c: "video", type: "video", src: "IMG_2520.MP4", poster: "assets/5796193438838493395_121.jpg" },
-   { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 2", c: "video", type: "video", src: "assets/video-1.mp4", poster: "assets/5796193438838493364_121.jpg" },
+const WORKS = [   
+  { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 1", c: "video", type: "video", src: "IMG_2644.MP4", poster: "5834916271273742324_121.jpg" },
+    { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 2", c: "video", type: "video", src: "IMG_2520.MP4", poster: "assets/5796193438838493395_121.jpg" },
+   { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 3", c: "video", type: "video", src: "assets/video-1.mp4", poster: "assets/5796193438838493364_121.jpg" },
   { t: "جاردينيا . كواليس التنظيم", sub: "مقطع 4", c: "video", type: "video", src: "assets/5796193438378500974.mp4", poster: "assets/5796193438838493364_121.jpg" },
 
   { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 2", c: "design", type: "image", src: "assets/5796193438838493362_121.jpg", poster: "assets/5796193438838493362_121.jpg" },
