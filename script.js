@@ -91,7 +91,7 @@ function buildChrome(active) {
 const WORKS = [   
     { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 1", c: "video", type: "video", src: "IMG_2815.MP4", poster: "5855030552308683210_121.jpg" },
 
-    { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 2", c: "video", type: "video", src: "IMG_2817.MP4", poster: "5855030552308683210_121.jpg" },
+    { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 2", c: "video", type: "video", src: "IMG_2817 - Trim - Trim.mp4", poster: "5855030552308683210_121.jpg" },
 
   { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 3", c: "video", type: "video", src: "IMG_2644.MP4", poster: "5834916271273742324_121.jpg" },
     { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 4", c: "video", type: "video", src: "IMG_2520.MP4", poster: "assets/5796193438838493395_121.jpg" },
