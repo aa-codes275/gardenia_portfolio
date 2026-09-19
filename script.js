@@ -88,25 +88,7 @@ function buildChrome(active) {
 }
 
 /* ---------- معرض الأعمال — مشغّل وسائط بقائمة تشغيل ---------- */
-const WORKS = [   
-    { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 1", c: "video", type: "video", src: "IMG_2815.MP4", poster: "5855030552308683210_121.jpg" },
-    { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 2", c: "video", type: "video", src: "IMG_2817 - Trim - Trim.mp4", poster: "5855030552308683210_121.jpg" },
-  { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 3", c: "video", type: "video", src: "IMG_2644.MP4", poster: "5834916271273742324_121.jpg" },
-    { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 4", c: "video", type: "video", src: "IMG_2520.MP4", poster: "assets/5796193438838493395_121.jpg" },
-   { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 5", c: "video", type: "video", src: "assets/video-1.mp4", poster: "assets/5796193438838493364_121.jpg" },
-  { t: "جاردينيا . كواليس التنظيم", sub: "مقطع 6", c: "video", type: "video", src: "assets/5796193438378500974.mp4", poster: "assets/5796193438838493364_121.jpg" },
-  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 2", c: "design", type: "image", src: "5855030552308683210_121.jpg", poster: "5855030552308683210_121.jpg" },
-  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 2", c: "design", type: "image", src: "assets/5796193438838493362_121.jpg", poster: "assets/5796193438838493362_121.jpg" },
-  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 4", c: "design", type: "image", src: "assets/5796193438838493366_121.jpg", poster: "assets/5796193438838493366_121.jpg" },
-  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 5", c: "design", type: "image", src: "assets/5796193438838493367_121.jpg", poster: "assets/5796193438838493367_121.jpg" },
-  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 6", c: "design", type: "image", src: "assets/5796193438838493368_121.jpg", poster: "assets/5796193438838493368_121.jpg" },
-  { t: "جاردينيا · الفرق يصنعه الإخراج", sub: "تصميم 7", c: "design", type: "image", src: "assets/img-2.jpg", poster: "assets/img-2.jpg" },
-  { t: "جاردينيا · اختيار اللقطات", sub: "تصميم 8", c: "design", type: "image", src: "assets/img-3.jpg", poster: "assets/img-3.jpg" },
-  { t: "جاردينيا · مرحلة المونتاج", sub: "تصميم 9", c: "design", type: "image", src: "assets/img-4.jpg", poster: "assets/img-4.jpg" },
-  { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/img-5.jpg", poster: "assets/img-5.jpg" },
-  { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/promo-1.jpg", poster: "assets/promo-1.jpg" },
-  { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/5780757485290459673_121.jpg", poster: "assets/5780757485290459557_120.jpg" }
-];
+
 
 
 /* ================= SUPABASE INTEGRATION ================= */
