@@ -6,7 +6,7 @@ const WA_LINK = "https://wa.me/" + PHONE_INTL;
 const SITE_URL = "https://gardenia-portfolio.vercel.app/";
 const SOCIAL = {
   instagram: "https://www.instagram.com/gardenia44a?igsi=MWFlOGg5YmExY2QwdA==",
-  tiktok: "https://www.tiktok.com/@gardeniaa44?_r=1&_t=ZS-99AwvLzKUWA",
+    tiktok: "https://www.tiktok.com/@gardeniaa44?_r=1&_t=ZS-99rE1ZqBT3I",
   snapchat: "https://snapchat.com/t/TI7watIr"
 };
 
