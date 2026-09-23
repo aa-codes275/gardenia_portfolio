@@ -2,9 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width="device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 <title>معرض الأعمال | Gardenia A</title>
-<meta name="description" content="استعرض أعمال جاردينيا A الاحترافية: فيديوهات وتغطيات الفعاليات، وتصاميم الإعلانات والهوية البصرية."/>
+<meta name="description" content="استعرض أعمال جاردينيا A الاحترافية: فيديوهات الفعاليات والتصاميم والإعلانات."/>
 <link rel="icon" type="image/svg+xml" href="logo.svg"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 <link rel="stylesheet" href="style.css"/>
@@ -12,89 +12,69 @@
 <body data-page="gallery.html">
 <header class="nav" data-nav></header>
 
-<section class="block" style="padding-top:2.5rem;padding-bottom:3rem;">
+<section class="gallery-hero-section">
   <div class="container">
-    <div class="head reveal" style="margin-bottom:2rem;">
-      <span class="label">معرض الأعمال المتميز</span>
-      <h2>أعمال صنعت <span class="gold">فارقاً وأثراً</span></h2>
-      <p>تصفح أحدث إنتاجاتنا المرئية وإعلاناتنا الإبداعية بكل سلاسة وسرعة.</p>
+    <div class="head reveal" style="margin-bottom:1.2rem;">
+      <span class="label">معرض الأعمال الاحترافي</span>
+      <h2>أعمال صنعت <span class="gold">الأثر والتميز</span></h2>
+      <p>تصفح أحدث الفيديوهات والتصاميم والتغطيات الميدانية بكل سهولة وسرعة.</p>
     </div>
 
-    <!-- أزرار التبديل السريع بين الأقسام -->
-    <div class="gallery-switcher-wrap reveal">
-      <div class="gallery-switcher">
-        <button class="switch-btn active" data-target="all"><i class="fa-solid fa-layer-group"></i> كل الأعمال</button>
-        <button class="switch-btn" data-target="videos"><i class="fa-solid fa-circle-play"></i> قسم الفيديوهات</button>
-        <button class="switch-btn" data-target="designs"><i class="fa-solid fa-wand-magic-sparkles"></i> الصور والإعلانات</button>
-      </div>
-    </div>
-
-    <!-- ================= قسم الفيديوهات ================= -->
-    <div id="videosSection" class="gallery-section-block reveal">
-      <div class="section-title-row">
-        <div>
-          <h3 class="section-title"><i class="fa-solid fa-video gold"></i> الفيديوهات والإنتاج المرئي</h3>
-          <p class="section-desc">مقاطع توثيق الفعاليات والإخراج السينمائي الميداني</p>
-        </div>
-        <span class="section-count-badge" id="videoCountBadge">0 فيديو</span>
-      </div>
-
-      <div class="videos-grid" id="videosContainer">
-        <!-- تُولَّد كروت الفيديو ديناميكياً -->
+    <!-- فلاتر التبديل السريعة بالأعلى -->
+    <div class="gallery-tabs-wrap reveal">
+      <div class="gallery-tabs">
+        <button class="tab-btn active" data-filter="all"><i class="fa-solid fa-layer-group"></i> الكل</button>
+        <button class="tab-btn" data-filter="video"><i class="fa-solid fa-play-circle"></i> الفيديوهات</button>
+        <button class="tab-btn" data-filter="design"><i class="fa-solid fa-pen-nib"></i> التصاميم والإعلانات</button>
+        <button class="tab-btn" data-filter="events"><i class="fa-solid fa-champagne-glasses"></i> الفعاليات</button>
       </div>
     </div>
 
-    <!-- فاصل جمالي أنيق -->
-    <div class="elegant-separator" id="sectionSeparator">
-      <span></span><i class="fa-solid fa-gem gold"></i><span></span>
+    <!-- شبكة عرض الأعمال على الموبايل والكمبيوتر -->
+    <div class="mobile-optimized-grid" id="galleryGrid">
+      <!-- يتم توليد الكروت ديناميكياً -->
     </div>
-
-    <!-- ================= قسم الصور والتصاميم والإعلانات ================= -->
-    <div id="designsSection" class="gallery-section-block reveal" style="margin-top:2.5rem;">
-      <div class="section-title-row">
-        <div>
-          <h3 class="section-title"><i class="fa-solid fa-images gold"></i> الصور والتصاميم والإعلانات</h3>
-          <p class="section-desc">هويات بصرية، بوسترات ترويجية، وتغطيات فوتوغرافية حية</p>
-        </div>
-        <span class="section-count-badge" id="designCountBadge">0 تصميم وصورة</span>
-      </div>
-
-      <!-- فلاتر فرعية للصور -->
-      <div class="filters" style="justify-content:flex-start;margin-bottom:1.5rem;">
-        <button class="filter-btn active" data-img-filter="all">عرض الكل</button>
-        <button class="filter-btn" data-img-filter="design">تصاميم وإعلانات</button>
-        <button class="filter-btn" data-img-filter="events">تغطية فعاليات</button>
-      </div>
-
-      <div class="images-masonry-grid" id="imagesContainer">
-        <!-- تُولَّد كروت الصور ديناميكياً -->
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- ================= نافذة العرض المنبثقة التفاعلية السريعة (Lightbox Modal) ================= -->
-<div id="lightboxModal" class="media-lightbox" aria-hidden="true">
-  <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
-  <div class="lightbox-content">
-    <button class="lightbox-close" id="lightboxCloseBtn" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
-    
-    <button class="lightbox-nav prev" id="lightboxPrevBtn" aria-label="السابق"><i class="fa-solid fa-chevron-right"></i></button>
-    <button class="lightbox-nav next" id="lightboxNextBtn" aria-label="التالي"><i class="fa-solid fa-chevron-left"></i></button>
-
-    <div class="lightbox-stage" id="lightboxStage">
-      <!-- مشغل الفيديو أو الصورة الفورية -->
+<!-- ================= شاشة تفاصيل العمل السينمائية + الشريط السفلي المتحرك ================= -->
+<div id="mediaViewerModal" class="media-viewer-modal" aria-hidden="true">
+  <div class="viewer-backdrop" id="viewerBackdrop"></div>
+  
+  <div class="viewer-container">
+    <!-- رأس نافذة العرض -->
+    <div class="viewer-top-bar">
+      <div class="viewer-work-info">
+        <span class="viewer-badge" id="viewerBadge">فيديو</span>
+        <h3 id="viewerTitle">عنوان العمل</h3>
+        <span class="viewer-sub" id="viewerSub">التفاصيل</span>
+      </div>
+      <div class="viewer-top-actions">
+        <a class="btn btn-gold btn-sm viewer-order-btn" id="viewerOrderLink" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> طلب هذا العمل
+        </a>
+        <button class="viewer-close-btn" id="viewerCloseBtn" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+      </div>
     </div>
 
-    <div class="lightbox-info">
-      <div class="lightbox-meta">
-        <span class="lightbox-badge" id="lightboxBadge">فيديو</span>
-        <h4 id="lightboxTitle">عنوان العمل</h4>
-        <p id="lightboxSub">التفاصيل والتصنيف</p>
+    <!-- منطقة العرض الرئيسية (فيديو أو صورة بحجم مريح وفخم) -->
+    <div class="viewer-stage-box">
+      <button class="stage-nav prev-btn" id="viewerPrevBtn" aria-label="السابق"><i class="fa-solid fa-chevron-right"></i></button>
+      <button class="stage-nav next-btn" id="viewerNextBtn" aria-label="التالي"><i class="fa-solid fa-chevron-left"></i></button>
+      
+      <div class="stage-viewport" id="stageViewport">
+        <!-- يتم حقن الفيديو أو الصورة هنا -->
       </div>
-      <div class="lightbox-actions">
-        <a class="btn btn-gold btn-sm" id="lightboxOrderBtn" target="_blank"><i class="fa-brands fa-whatsapp"></i> طلب مثل هذا العمل</a>
+    </div>
+
+    <!-- الشريط السفلي المتحرك لباقي الأعمال (Horizontal Carousel Strip) -->
+    <div class="viewer-bottom-strip-wrap">
+      <div class="strip-header">
+        <span><i class="fa-solid fa-film gold"></i> باقي الأعمال (اضغط للتنقل السريع)</span>
+        <span id="stripCounter" class="strip-counter">1 / 10</span>
+      </div>
+      <div class="viewer-strip-scroll" id="viewerStripScroll">
+        <!-- يتم توليد صور مصغرة للأعمال داخل الشريط -->
       </div>
     </div>
   </div>
