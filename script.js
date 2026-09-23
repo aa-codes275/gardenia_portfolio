@@ -6,7 +6,7 @@ const WA_LINK = "https://wa.me/" + PHONE_INTL;
 const SITE_URL = "https://gardenia-portfolio.vercel.app/";
 const SOCIAL = {
   instagram: "https://www.instagram.com/gardenia44a?igsi=MWFlOGg5YmExY2QwdA==",
-    tiktok: "https://www.tiktok.com/@gardeniaa44?_r=1&_t=ZS-99rE1ZqBT3I",
+  tiktok: "https://www.tiktok.com/@gardeniaa44?_r=1&_t=ZS-99AwvLzKUWA",
   snapchat: "https://snapchat.com/t/TI7watIr"
 };
 
@@ -88,7 +88,25 @@ function buildChrome(active) {
 }
 
 /* ---------- معرض الأعمال — مشغّل وسائط بقائمة تشغيل ---------- */
-
+const WORKS = [   
+    { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 1", c: "video", type: "video", src: "IMG_2815.MP4", poster: "5855030552308683210_121.jpg" },
+    { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 2", c: "video", type: "video", src: "IMG_2817 - Trim - Trim.mp4", poster: "5855030552308683210_121.jpg" },
+  { t: "جاردينيا .  [جاردينيا اي في قلب الحدث]", sub: "مقطع 3", c: "video", type: "video", src: "IMG_2644.MP4", poster: "5834916271273742324_121.jpg" },
+    { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 4", c: "video", type: "video", src: "IMG_2520.MP4", poster: "assets/5796193438838493395_121.jpg" },
+   { t: "جاردينيا ·    كواليس التنظيم", sub: "مقطع 5", c: "video", type: "video", src: "assets/video-1.mp4", poster: "assets/5796193438838493364_121.jpg" },
+  { t: "جاردينيا . كواليس التنظيم", sub: "مقطع 6", c: "video", type: "video", src: "assets/5796193438378500974.mp4", poster: "assets/5796193438838493364_121.jpg" },
+  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 2", c: "design", type: "image", src: "5855030552308683210_121.jpg", poster: "5855030552308683210_121.jpg" },
+  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 2", c: "design", type: "image", src: "assets/5796193438838493362_121.jpg", poster: "assets/5796193438838493362_121.jpg" },
+  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 4", c: "design", type: "image", src: "assets/5796193438838493366_121.jpg", poster: "assets/5796193438838493366_121.jpg" },
+  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 5", c: "design", type: "image", src: "assets/5796193438838493367_121.jpg", poster: "assets/5796193438838493367_121.jpg" },
+  { t: "جاردينيا · مشروعك يحتاج فريق", sub: "تصميم 6", c: "design", type: "image", src: "assets/5796193438838493368_121.jpg", poster: "assets/5796193438838493368_121.jpg" },
+  { t: "جاردينيا · الفرق يصنعه الإخراج", sub: "تصميم 7", c: "design", type: "image", src: "assets/img-2.jpg", poster: "assets/img-2.jpg" },
+  { t: "جاردينيا · اختيار اللقطات", sub: "تصميم 8", c: "design", type: "image", src: "assets/img-3.jpg", poster: "assets/img-3.jpg" },
+  { t: "جاردينيا · مرحلة المونتاج", sub: "تصميم 9", c: "design", type: "image", src: "assets/img-4.jpg", poster: "assets/img-4.jpg" },
+  { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/img-5.jpg", poster: "assets/img-5.jpg" },
+  { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/promo-1.jpg", poster: "assets/promo-1.jpg" },
+  { t: "جاردينيا × ريتش جروب · شراكة", sub: "فعاليات", c: "events", type: "image", src: "assets/5780757485290459673_121.jpg", poster: "assets/5780757485290459557_120.jpg" }
+];
 
 
 /* ================= SUPABASE INTEGRATION ================= */
@@ -132,197 +150,208 @@ async function fetchWorksFromSupabase() {
 }
 
 
-let currentMediaList = [];
-let currentMediaIndex = 0;
+let currentItemsList = [];
+let currentActiveIndex = 0;
 
 function q(id) { return document.getElementById(id); }
 
-async function initModernGallery() {
-  const videosContainer = q("videosContainer");
-  const imagesContainer = q("imagesContainer");
-  if (!videosContainer && !imagesContainer) return;
+async function initMobileOptimizedGallery() {
+  const grid = q("galleryGrid");
+  if (!grid) return;
 
   const remoteWorks = await fetchWorksFromSupabase();
   const allWorks = remoteWorks || WORKS;
 
-  const videoItems = allWorks.filter(w => w.type === "video" || w.c === "video");
-  const designItems = allWorks.filter(w => w.type !== "video" && w.c !== "video");
+  let activeFilter = "all";
 
-  if (q("videoCountBadge")) q("videoCountBadge").textContent = videoItems.length + " فيديو";
-  if (q("designCountBadge")) q("designCountBadge").textContent = designItems.length + " عمل وإعلان";
+  function renderGrid() {
+    const filtered = activeFilter === "all" ? allWorks : allWorks.filter(w => w.c === activeFilter || w.type === activeFilter);
+    currentItemsList = filtered;
 
-  // عرض الفيديوهات
-  if (videosContainer) {
-    videosContainer.innerHTML = videoItems.map((w, i) => `
-      <div class="video-card" data-v-index="${i}">
-        <div class="video-thumb-box">
-          <img src="${w.poster || w.src}" alt="${w.t}" loading="lazy" decoding="async"/>
-          <span class="video-tag"><i class="fa-solid fa-play-circle"></i> ${w.sub || 'فيديو'}</span>
-          <div class="video-play-overlay">
-            <div class="play-pulse-btn"><i class="fa-solid fa-play"></i></div>
+    grid.innerHTML = filtered.map((w, i) => {
+      const isVideo = w.type === "video" || w.c === "video";
+      const badgeText = isVideo ? "فيديو" : (w.c === "design" ? "تصميم" : "فعالية");
+      return `
+        <div class="gallery-card" data-index="${i}">
+          <div class="card-media-box">
+            <img src="${w.poster || w.src}" alt="${w.t}" loading="lazy" decoding="async"/>
+            <span class="card-type-badge">${badgeText}</span>
+            ${isVideo ? `
+              <div class="card-play-icon">
+                <div class="play-ring"><i class="fa-solid fa-play"></i></div>
+              </div>` : ''}
+          </div>
+          <div class="card-caption">
+            <h4>${w.t}</h4>
+            <small>${w.sub || ''}</small>
           </div>
         </div>
-        <div class="video-card-body">
-          <h4 class="video-card-title">${w.t}</h4>
-          <span class="video-card-sub">${w.sub || 'توثيق مرئي احترافي'}</span>
-        </div>
-      </div>
-    `).join('');
+      `;
+    }).join("");
 
-    videosContainer.querySelectorAll(".video-card").forEach(card => {
+    grid.querySelectorAll(".gallery-card").forEach(card => {
       card.addEventListener("click", () => {
-        const idx = +card.dataset.vIndex;
-        openLightbox(videoItems, idx);
+        const idx = +card.dataset.index;
+        openViewer(idx);
       });
     });
   }
 
-  // عرض الصور
-  function renderImages(filter = "all") {
-    if (!imagesContainer) return;
-    const filtered = filter === "all" ? designItems : designItems.filter(w => w.c === filter);
-    imagesContainer.innerHTML = filtered.map((w, i) => `
-      <div class="image-card" data-img-index="${i}">
-        <div class="image-thumb-box">
-          <img src="${w.src}" alt="${w.t}" loading="lazy" decoding="async"/>
-          <span class="image-zoom-icon"><i class="fa-solid fa-expand"></i></span>
-          <div class="image-hover-info">
-            <h5 class="image-hover-title">${w.t}</h5>
-            <span class="image-hover-sub">${w.sub || ''}</span>
-          </div>
-        </div>
-      </div>
-    `).join('');
-
-    imagesContainer.querySelectorAll(".image-card").forEach(card => {
-      card.addEventListener("click", () => {
-        const idx = +card.dataset.imgIndex;
-        openLightbox(filtered, idx);
-      });
-    });
-  }
-
-  renderImages("all");
-
-  // فلاتر الصور
-  document.querySelectorAll("[data-img-filter]").forEach(btn => {
+  // فلاتر التبويبات
+  document.querySelectorAll("[data-filter]").forEach(btn => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll("[data-img-filter]").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll("[data-filter]").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      renderImages(btn.dataset.imgFilter);
+      activeFilter = btn.dataset.filter;
+      renderGrid();
     });
   });
 
-  // مبدل الأقسام (كل الأعمال / فيديوهات / صور وإعلانات)
-  document.querySelectorAll(".switch-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".switch-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const target = btn.dataset.target;
-      const vSec = q("videosSection");
-      const dSec = q("designsSection");
-      const sep = q("sectionSeparator");
-
-      if (target === "all") {
-        vSec && vSec.classList.remove("is-hidden");
-        dSec && dSec.classList.remove("is-hidden");
-        sep && sep.classList.remove("is-hidden");
-      } else if (target === "videos") {
-        vSec && vSec.classList.remove("is-hidden");
-        dSec && dSec.classList.add("is-hidden");
-        sep && sep.classList.add("is-hidden");
-      } else if (target === "designs") {
-        vSec && vSec.classList.add("is-hidden");
-        dSec && dSec.classList.remove("is-hidden");
-        sep && sep.classList.add("is-hidden");
-      }
-    });
-  });
-
-  setupLightboxEvents();
+  renderGrid();
+  setupViewerControls();
 }
 
-function openLightbox(list, index) {
-  currentMediaList = list;
-  currentMediaIndex = index;
-  renderLightboxItem();
-  const modal = q("lightboxModal");
-  if (modal) {
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  }
+function openViewer(index) {
+  if (!currentItemsList.length) return;
+  currentActiveIndex = index;
+  const modal = q("mediaViewerModal");
+  if (!modal) return;
+
+  renderActiveWork();
+  renderStrip();
+
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 }
 
-function closeLightbox() {
-  const modal = q("lightboxModal");
-  if (modal) {
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    const stage = q("lightboxStage");
-    if (stage) stage.innerHTML = "";
-  }
+function closeViewer() {
+  const modal = q("mediaViewerModal");
+  if (!modal) return;
+
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
+  const viewport = q("stageViewport");
+  if (viewport) viewport.innerHTML = "";
 }
 
-function renderLightboxItem() {
-  if (!currentMediaList.length) return;
-  const item = currentMediaList[currentMediaIndex];
-  const stage = q("lightboxStage");
-  if (!stage) return;
+function renderActiveWork() {
+  const item = currentItemsList[currentActiveIndex];
+  if (!item) return;
 
+  const viewport = q("stageViewport");
   const isVideo = item.type === "video" || item.c === "video";
-  if (isVideo) {
-    stage.innerHTML = `<video src="${item.src}" poster="${item.poster || item.src}" controls autoplay playsinline style="max-height:64vh;max-width:100%"></video>`;
-  } else {
-    stage.innerHTML = `<img src="${item.src}" alt="${item.t}" style="max-height:64vh;max-width:100%">`;
+
+  if (viewport) {
+    if (isVideo) {
+      viewport.innerHTML = `<video src="${item.src}" poster="${item.poster || item.src}" controls autoplay playsinline style="max-height:54vh;max-width:100%"></video>`;
+    } else {
+      viewport.innerHTML = `<img src="${item.src}" alt="${item.t}" style="max-height:54vh;max-width:100%"/>`;
+    }
   }
 
-  if (q("lightboxTitle")) q("lightboxTitle").textContent = item.t;
-  if (q("lightboxSub")) q("lightboxSub").textContent = item.sub || '';
-  if (q("lightboxBadge")) q("lightboxBadge").textContent = isVideo ? 'فيديو وتوثيق مرئي' : 'تصميم وإعلان';
+  if (q("viewerTitle")) q("viewerTitle").textContent = item.t;
+  if (q("viewerSub")) q("viewerSub").textContent = item.sub || '';
+  if (q("viewerBadge")) q("viewerBadge").textContent = isVideo ? "فيديو وتوثيق مرئي" : (item.c === "design" ? "تصميم وإعلان" : "فعالية");
 
-  const orderBtn = q("lightboxOrderBtn");
-  if (orderBtn) {
-    const text = encodeURIComponent(`مرحباً جاردينيا A، أرغب في الاستفسار أو طلب تنفيذ عمل مشابه لـ (${item.t} - ${item.sub || ''})`);
-    orderBtn.href = `${WA_LINK}?text=${text}`;
+  // تجهيز وصلة الطلب للعمل الحالي
+  const orderLink = q("viewerOrderLink");
+  if (orderLink) {
+    const msg = encodeURIComponent(`مرحباً جاردينيا A، أود طلب تفاصيل وعرض سعر لـ (${item.t} - ${item.sub || ''}) المعروض في موقعكم.`);
+    orderLink.href = `${WA_LINK}?text=${msg}`;
+  }
+
+  if (q("stripCounter")) {
+    q("stripCounter").textContent = `${currentActiveIndex + 1} / ${currentItemsList.length}`;
   }
 }
 
-function nextLightboxItem() {
-  if (!currentMediaList.length) return;
-  currentMediaIndex = (currentMediaIndex + 1) % currentMediaList.length;
-  renderLightboxItem();
+function renderStrip() {
+  const strip = q("viewerStripScroll");
+  if (!strip) return;
+
+  strip.innerHTML = currentItemsList.map((w, i) => {
+    const isVideo = w.type === "video" || w.c === "video";
+    return `
+      <div class="strip-thumb-item ${i === currentActiveIndex ? 'active' : ''}" data-strip-idx="${i}">
+        <img src="${w.poster || w.src}" alt="${w.t}" loading="lazy"/>
+        ${isVideo ? `<i class="fa-solid fa-play"></i>` : ''}
+      </div>
+    `;
+  }).join("");
+
+  strip.querySelectorAll(".strip-thumb-item").forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      const idx = +thumb.dataset.stripIdx;
+      currentActiveIndex = idx;
+      renderActiveWork();
+      updateStripActive();
+    });
+  });
+
+  scrollActiveThumbIntoView();
 }
 
-function prevLightboxItem() {
-  if (!currentMediaList.length) return;
-  currentMediaIndex = (currentMediaIndex - 1 + currentMediaList.length) % currentMediaList.length;
-  renderLightboxItem();
+function updateStripActive() {
+  document.querySelectorAll(".strip-thumb-item").forEach(item => {
+    const idx = +item.dataset.stripIdx;
+    item.classList.toggle("active", idx === currentActiveIndex);
+  });
+  scrollActiveThumbIntoView();
 }
 
-function setupLightboxEvents() {
-  const closeBtn = q("lightboxCloseBtn");
-  const backdrop = q("lightboxBackdrop");
-  const nextBtn = q("lightboxNextBtn");
-  const prevBtn = q("lightboxPrevBtn");
+function scrollActiveThumbIntoView() {
+  const activeEl = document.querySelector(".strip-thumb-item.active");
+  if (activeEl && activeEl.scrollIntoView) {
+    activeEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }
+}
 
-  closeBtn && closeBtn.addEventListener("click", closeLightbox);
-  backdrop && backdrop.addEventListener("click", closeLightbox);
-  nextBtn && nextBtn.addEventListener("click", nextLightboxItem);
-  prevBtn && prevBtn.addEventListener("click", prevLightboxItem);
+function nextWork() {
+  if (!currentItemsList.length) return;
+  currentActiveIndex = (currentActiveIndex + 1) % currentItemsList.length;
+  renderActiveWork();
+  updateStripActive();
+}
+
+function prevWork() {
+  if (!currentItemsList.length) return;
+  currentActiveIndex = (currentActiveIndex - 1 + currentItemsList.length) % currentItemsList.length;
+  renderActiveWork();
+  updateStripActive();
+}
+
+function setupViewerControls() {
+  const closeBtn = q("viewerCloseBtn");
+  const backdrop = q("viewerBackdrop");
+  const nextBtn = q("viewerNextBtn");
+  const prevBtn = q("viewerPrevBtn");
+
+  closeBtn && closeBtn.addEventListener("click", closeViewer);
+  backdrop && backdrop.addEventListener("click", closeViewer);
+  nextBtn && nextBtn.addEventListener("click", nextWork);
+  prevBtn && prevBtn.addEventListener("click", prevWork);
 
   document.addEventListener("keydown", (e) => {
-    const modal = q("lightboxModal");
+    const modal = q("mediaViewerModal");
     if (!modal || !modal.classList.contains("is-open")) return;
-    if (e.key === "Escape") closeLightbox();
-    if (e.key === "ArrowRight") prevLightboxItem();
-    if (e.key === "ArrowLeft") nextLightboxItem();
+    if (e.key === "Escape") closeViewer();
+    if (e.key === "ArrowRight") prevWork();
+    if (e.key === "ArrowLeft") nextWork();
   });
 }
 document.addEventListener("DOMContentLoaded", () => {
   buildChrome(document.body.dataset.page || "");
-  initModernGallery();
+  initMobileOptimizedGallery();
+  initMobileOptimizedGallery();
+  document.querySelectorAll(".filter-btn").forEach(b =>
+    b.addEventListener("click", () => {
+      document.querySelectorAll(".filter-btn").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      renderPlaylist(b.dataset.filter);
+    }));
 
   const form = document.getElementById("bookForm");
   form && form.addEventListener("submit", async e => {
